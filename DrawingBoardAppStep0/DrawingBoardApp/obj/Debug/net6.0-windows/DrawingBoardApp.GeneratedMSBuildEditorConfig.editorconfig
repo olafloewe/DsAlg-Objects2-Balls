@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DrawingBoardApp
-build_property.ProjectDir = C:\Users\Student\Downloads\DrawingBoardAppStep0\DrawingBoardApp\
+build_property.ProjectDir = C:\Users\olafl\source\repos\olafloewe\DsAlg-Objects2-Balls\DrawingBoardAppStep0\DrawingBoardApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
