@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DrawingBoardApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d33fe2a05f319340d9810e356fb03cca41b20ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd777a564c17ea50bacf79f0b1f222ecbbdf7d27")]
 [assembly: System.Reflection.AssemblyProductAttribute("DrawingBoardApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DrawingBoardApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

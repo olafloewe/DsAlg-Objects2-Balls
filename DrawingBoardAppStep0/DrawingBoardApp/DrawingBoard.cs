@@ -6,7 +6,10 @@ namespace DrawingBoardApp {
     class DrawingBoard {
         private int tick;
         private int scrWidth, scrHeight;
+
+        private int absWidth, absHeight;
         private bool right, down = true;
+        private int tickRate = 21;
 
         public DrawingBoard(MainForm mainForm) {
             scrWidth = mainForm.ClientSize.Width;
@@ -18,19 +21,22 @@ namespace DrawingBoardApp {
             // Clear the screen - for this frame
             g.Clear(Color.FromArgb(228, 228, 228));
 
-            if (tick % (scrWidth + 20) >= scrWidth - 1) right = false;
-            if (tick % (scrWidth) <= 20) right = true; 
-            if (tick % (scrHeight + 20)>= scrHeight - 1) down = false;
-            if (tick % (scrHeight ) <= 20) down = true;
+            // counts up from 0 to max screen parameters along side tick
+            absWidth = tick % (scrWidth + tickRate);
+            absHeight = tick % (scrHeight + tickRate);
 
-            g.DrawEllipse(Pens.Red, (right)? tick % scrWidth : scrWidth - (tick % scrWidth), (down) ? tick % scrHeight : scrHeight - (tick % scrHeight), 20, 20);
+            // direction switch once exceeded border
+            if (absWidth > scrWidth-1 || scrWidth - (absWidth) < 1) right = !right;
+            if (absHeight > scrHeight-1 || scrHeight - (absHeight) < 1) down = !down;
+
+            // new position based on direction headed and tickrate based incrementing
+            g.DrawEllipse(Pens.Red, right? absWidth:(scrWidth - absWidth), down? absHeight:(scrHeight - absHeight), 20, 20);
         }
 
         public void Tick() {
-            tick += 10;
+            tick += tickRate;
 
-            Console.WriteLine($"right: {right} down: {down}");
-            Console.WriteLine("Tick {0}", tick);
+            Console.WriteLine($"Tick {tick}");
         }
 
         private bool Flip(bool side) {
